@@ -2,8 +2,8 @@ language: c
 script:
 - gcc main.c -o main
 - "./main"
-after_script:
 - tar czvf main.tar.gz ./main
+after_script:
 deploy:
   provider: releases
   api_key:
