@@ -1,4 +1,5 @@
 language: c
+before_script: cd $TRAVIS_BUILD_DIR/
 script:
 - gcc main.c -o main
 - "./main"
