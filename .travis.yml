@@ -13,4 +13,5 @@ deploy:
     - ./main.tar.gz
   on:
     repo: roy4801/ci-test
+    branch: master
     tags: true
