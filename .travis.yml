@@ -1,4 +1,14 @@
 language: c
 script:
-  - gcc main.c -o main
-  - ./main
+- gcc main.c -o main
+- "./main"
+after_script:
+- tar czvf main.tar.gz ./main
+deploy:
+  provider: releases
+  api_key:
+    secure: b4tvYKpT6ioK0kIfb2Oj3vVIo0d4kzjWrsAP+TM3zOkRrM2lwYGndh6nLBYqoZlHg7NPurotJrgqI/043F/FT1ucbiS1ZBYz3omjQDOK6blDhWhCy3HPwiHRkxx1sSl+juxEEj6ZmCsnfogb7DBBG1sGb+4f42jVrayBhvhyUxM7p9+tSSiXy3GXRCFZqo4pGcGLSL+rLuMSonuywIoRsxztGkOJ1U9R+WnUivPNElL6LJDqcwwzZI/qzDeLHLXWCpLvGgCZziIJ9Irtj13c9zuU2GxiCf1VUShsScSTyaZHRAaC19ploHJlaI8WG4cVZ+Vm0OfECaofvaspuQXmcUvjLYB2IkCXwJrTWr4Ca55Se6sfU1DnCNCcwYX9rZvGmcNEDTlyoTXkRWHTO5iAXw7j8BsvXgTgdrMFad+emJCCtLWDVekhYV2a4N7nK4uXUFhDJ23y7qhGLpU+aELNSY+4DhbldquD8m1B+NvIJz2m+qXC83uWN2kYA8V89zN0QjZ/0wX35K86WCVEd1hJN4Ju/AlMSk6FCNU1cF7LkYtcG9lwnHhYkVOc+vuVQOA8fiSm5KIPd4SX3yOIU8UMYzPEHT7GexR8+cXnLRTFIwCTRtTki6uD8TkGENZpaB2aFIY/zT0AyARpK5kjc7xwRemyPkdeR1gC5XHfTD8YIXw=
+  file: main.tar.gz
+  on:
+    repo: roy4801/ci-test
+    tags: true
