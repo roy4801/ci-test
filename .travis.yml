@@ -4,7 +4,6 @@ script:
 - gcc main.c -o main
 - "./main"
 - tar czvf main.tar.gz ./main
-after_script:
 deploy:
   provider: releases
   api_key:
